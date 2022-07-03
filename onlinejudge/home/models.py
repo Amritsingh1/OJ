@@ -3,6 +3,7 @@ from django.db import models
 from django.forms import CharField
 from django.utils import timezone
 # Create your models here.
+from mdeditor.fields import MDTextField
 
 
 class Problem(models.Model):
@@ -10,14 +11,14 @@ class Problem(models.Model):
     difficulty_choices = (
         ('Hard', 'Hard'), ('Medium', 'Medium'), ('Easy', 'Easy'))
     problem_id = models.IntegerField()
-    statement = models.TextField()
+    statement = MDTextField()
     name = models.CharField(max_length=100)
     difficulty = models.CharField(max_length=6, choices=difficulty_choices)
     input = models.TextField(default="")
     output = models.TextField(default="")
 
     def __str__(self):
-        return str(self.problem_id)
+        return str(self.name)
 
 
 class Solution(models.Model):

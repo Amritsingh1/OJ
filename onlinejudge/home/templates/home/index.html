@@ -1,0 +1,80 @@
+<!-- {% if problem_list %}
+<ul>
+  {% for problem in problem_list%}
+  <li>
+    <a href="/problemset/problem/{{problem.problem_id}}">{{problem.name}}</a>
+  </li>
+  {%endfor%}
+</ul>
+{% else %}
+<p>No problems available</p>
+{%endif %} -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fs-4">Auto Grader</span>
+        </a>
+  
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        </ul>
+      </header>
+    </div>
+    </nav>
+
+    <div class="list-group">
+     
+      {% for problem in problem_list%}
+        <a href="/problemset/problem/{{problem.problem_id}} " class="list-group-item d-flex justify-content-between list-group-item-action">
+          {{problem.name}}
+        {% if problem.difficuly == "Hard" %}
+          <span class="badge text-bg-danger"">Hard</span>
+        {% elif problem.difficuly == "Medium" %}
+          <span class="badge text-bg-warning">Medium</span>
+        {% else %}
+          <span class="badge text-bg-success">Easy</span>
+        {%endif %}
+
+
+        </a>
+
+      {%endfor%}
+     
+    </div>
+  
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
