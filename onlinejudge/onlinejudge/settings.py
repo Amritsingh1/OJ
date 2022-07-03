@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mdeditor'
+    'mdeditor',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +52,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'onlinejudge.urls'
+MDEDITOR_CONFIGS = {
+    'default': {
 
+        'language': 'en'  # zh / en / es
+    }
+
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

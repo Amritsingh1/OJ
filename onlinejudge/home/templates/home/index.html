@@ -25,7 +25,7 @@
     />
   </head>
   <body>
-    <div class="container">
+    <div class="container" style="padding-bottom: 30px;">
       <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
           <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
@@ -40,14 +40,15 @@
     </div>
     </nav>
 
-    <div class="list-group">
+    <div class="list-group" >
      
       {% for problem in problem_list%}
-        <a href="/problemset/problem/{{problem.problem_id}} " class="list-group-item d-flex justify-content-between list-group-item-action">
+      <div style="  margin: auto;width: 75%;">
+        <a href="/problemset/problem/{{problem.problem_id}} " class="list-group-item d-flex justify-content-between list-group-item-action" >
           {{problem.name}}
-        {% if problem.difficuly == "Hard" %}
+        {% if problem.difficulty == "Hard" %}
           <span class="badge text-bg-danger"">Hard</span>
-        {% elif problem.difficuly == "Medium" %}
+        {% elif problem.difficulty == "Medium" %}
           <span class="badge text-bg-warning">Medium</span>
         {% else %}
           <span class="badge text-bg-success">Easy</span>
@@ -55,6 +56,8 @@
 
 
         </a>
+      </div>
+       
 
       {%endfor%}
      
