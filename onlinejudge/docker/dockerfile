@@ -1,4 +1,0 @@
-FROM gcc:latest
-COPY input.txt /usr/src
-COPY test.cpp /usr/src
-RUN touch /usr/src/output1.txt

@@ -48,7 +48,7 @@ def simple(request):
 def checker(question_id, code, input, output):
 
     verdict = ""
-    os.chdir('docker')
+    os.chdir('judge')
     file = open('test.cpp', 'w')
     file.write(code)
     file.close()
