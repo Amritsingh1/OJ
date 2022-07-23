@@ -22,6 +22,7 @@ from django.conf.urls import url, include
 # from . import simple
 urlpatterns = [
     path('problemset/', include('home.urls')),
+    path('', include('home.urls')),
     path('admin/', admin.site.urls),
     url(r'mdeditor/', include('mdeditor.urls'))
 ]

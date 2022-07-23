@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    {% for i in results %}
+
+    <div class="container m-3 mx-auto">
+      <ul
+        class="list-group list-group-horizontal"
+        style="margin: auto; width: 75%"
+      >
+        <li class="list-group-item">{{i.problem.name}}</li>
+        <li class="list-group-item">{{i.verdict}}</li>
+        <li class="list-group-item">{{i.datetime}}</li>
+
+        <a
+          class="list-group-item"
+          href="/problemset/problem/{{i.problem.problem_id}}"
+        >
+          problem</a
+        >
+      </ul>
+    </div>
+    {% endfor %}
+  </body>
+</html>

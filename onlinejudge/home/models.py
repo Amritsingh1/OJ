@@ -23,9 +23,9 @@ class Problem(models.Model):
 
 class Solution(models.Model):
     problem = models.ForeignKey(Problem, on_delete=models.CASCADE)
-    solution_id = models.IntegerField()
     verdict = models.CharField(max_length=12)
     datetime = models.DateTimeField()
+    code = models.TextField(default="")
 
     def save(self, *args, **kwargs):
         ''' On save, update timestamps '''
@@ -35,4 +35,16 @@ class Solution(models.Model):
         return super(Solution, self).save(*args, **kwargs)
 
     def __str__(self):
-        return str(self.solution_id)
+        return str(self.problem)
+
+# Code Editor Class
+
+
+# class Snippet(models.Model):
+#     # class EditorForm(forms.Form):
+#     # text = forms.CharField(widget=AceWidget)
+#     text = models.TextField(default="Hello World")
+#     created_at = models.DateTimeField(auto_now_add=True)
+
+#     class Meta:
+#         ordering = ('-created_at', )

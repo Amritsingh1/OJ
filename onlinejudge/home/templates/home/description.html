@@ -36,87 +36,16 @@
         });
       });
     </script>
-    <div
-      class="ace_content"
-      style="top: 16px; left: 0px; width: 714.301px; height: 363px"
-    >
-      <div class="ace_layer ace_print-margin-layer">
-        <div
-          class="ace_print-margin"
-          style="left: 620px; visibility: hidden"
-        ></div>
-      </div>
-      <div class="ace_layer ace_marker-layer">
-        <div
-          class="ace_active-line"
-          style="height: 16px; top: 80px; left: 0px; right: 0px"
-        ></div>
-      </div>
-      <div
-        class="ace_layer ace_text-layer"
-        style="height: 1e6px; margin: 0px 4px; top: 0px; left: 0px"
+    {{ form.media }}
+    <div>
+      <form
+        action="{%url 'submission' problem.problem_id %}"
+        method="post"
+        style="margin: auto"
       >
-        <div class="ace_line_group" style="height: 16px; top: 0px">
-          <div class="ace_line" style="height: 16px">
-            <span class="ace_keyword">#include</span
-            ><span class="ace_constant ace_other"> &lt;iostream&gt;</span>
-          </div>
-        </div>
-        <div class="ace_line_group" style="height: 16px; top: 16px">
-          <div class="ace_line" style="height: 16px">
-            <span class="ace_keyword ace_control">using</span>
-            <span class="ace_keyword ace_operator">namespace</span>
-            <span class="ace_identifier">std</span
-            ><span class="ace_punctuation ace_operator">;</span>
-          </div>
-        </div>
-        <div class="ace_line_group" style="height: 16px; top: 32px">
-          <div class="ace_line" style="height: 16px"></div>
-        </div>
-        <div class="ace_line_group" style="height: 16px; top: 48px">
-          <div class="ace_line" style="height: 16px">
-            <span class="ace_storage ace_type">int</span>
-            <span class="ace_identifier">main</span
-            ><span class="ace_paren ace_lparen">(</span
-            ><span class="ace_paren ace_rparen">)</span>
-            <span class="ace_paren ace_lparen">{</span>
-          </div>
-        </div>
-        <div class="ace_line_group" style="height: 16px; top: 64px">
-          <div class="ace_line" style="height: 16px">
-            <span class="ace_comment">// your code goes here</span>
-          </div>
-        </div>
-        <div class="ace_line_group" style="height: 16px; top: 80px">
-          <div class="ace_line" style="height: 16px">
-            <span class="ace_keyword ace_control">return</span>
-            <span class="ace_constant ace_numeric">0</span
-            ><span class="ace_punctuation ace_operator">;</span>
-          </div>
-        </div>
-        <div class="ace_line_group" style="height: 16px; top: 96px">
-          <div class="ace_line" style="height: 16px">
-            <span class="ace_paren ace_rparen">}</span>
-          </div>
-        </div>
-        <div class="ace_line_group" style="height: 16px; top: 112px">
-          <div class="ace_line" style="height: 16px"></div>
-        </div>
-      </div>
-      <div class="ace_layer ace_marker-layer"></div>
-      <div class="ace_layer ace_cursor-layer ace_hidden-cursors">
-        <div
-          class="ace_cursor"
-          style="
-            display: block;
-            top: 80px;
-            left: 104px;
-            width: 8px;
-            height: 16px;
-            animation-duration: 1000ms;
-          "
-        ></div>
-      </div>
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" />
+      </form>
     </div>
   </body>
 </html>
