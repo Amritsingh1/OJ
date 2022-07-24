@@ -1,1 +1,1 @@
-web: gunicorn codejudge.wsgi --log-file -
+web: gunicorn onlinejudge.wsgi --log-file -
